@@ -2,5 +2,5 @@
 
 Codes from the discipline of Data Structures
 
-Folders:
+Topics:
 **Sorting Algorithms**
