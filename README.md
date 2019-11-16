@@ -1,4 +1,4 @@
-# Data-Structures
+# Data Structures
 
 Codes from the discipline of Data Structures
 
