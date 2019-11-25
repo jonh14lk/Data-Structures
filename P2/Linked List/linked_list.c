@@ -29,7 +29,7 @@ void print_linked_list(node *head) // printar lista
         head = head -> next ;
     }
 }
-node* search(node *head , int value) // para procuar alguem
+node* search(node *head , int value) // para procurar alguem
 {
     while (head != NULL)
     {
