@@ -14,12 +14,36 @@ node* create_linked_list() // inicializar
 {
     return NULL;
 }
-node* add(node *head , int item) // funcao para adicionar elementos
+node* add(node *head , int item) // funcao para adicionar elementos no inicio
 {
     node *new_node = (node*) malloc(sizeof(node));
     new_node -> item = item;
     new_node -> next = head;
     return new_node;
+}
+node* add2(node *head , int item) // funcao para adicionar elementos no final
+{
+    node *new_node = (node*) malloc(sizeof(node));
+    new_node -> item = item;
+    new_node -> next = NULL;
+    node *aux = head; 
+    
+    if (head != NULL)
+    {
+        while (head -> next != NULL)
+        {
+            head = head -> next;
+        }
+
+        head -> next = new_node;
+
+        return aux;
+    }
+
+    else
+    {
+        return new_node;
+    }
 }
 void print_linked_list(node *head) // printar lista
 {
