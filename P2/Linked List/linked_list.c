@@ -95,6 +95,25 @@ node* remove_node(node *head, int item) // remover no
     free(current);
     return head;
 }
+node* inverter_lista (node *list) // inverter 
+{
+    node *a = list;
+    node *b = list -> next;
+    node *aux = list -> next; 
+    
+    while(b != NULL)
+    {
+        aux = aux -> next;
+        b -> next = a;
+        a = b;
+        b = aux;
+    }
+
+    list -> next = NULL;
+    list = a ;
+
+    return list ;
+}
 int main()
 {
     node* list = create_linked_list(); 
