@@ -73,13 +73,13 @@ int main ()
     }
 
     printf("desempilhando\n");
-    {
+    
         while(peek(stack) != -1)
         {
             printf("%d está no topo da pilha!\n" , peek(stack));
             printf("%d removido!\n\n" , pop(stack));
         }
-    }
+    
 
     return 0 ;
 }
