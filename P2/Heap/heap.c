@@ -26,6 +26,29 @@ int item_of(heap *heap , int i)
 {
     return heap -> data[i] ; 
 }
+void swap (int *a , int *b)
+{
+    int aux = *a ;
+    *a = *b ;
+    *b = aux ;
+}
+void max_heapify(heap *heap , int i)
+{ 
+    int largest ;
+    int left_index = get_left_index(heap , i);
+    int right_index = get_right_index(heap , i);
+
+    if (left_index <= heap -> size && heap -> data[left_index] > heap -> data[i]) largest = left_index ;
+    else largest = i;
+    
+    if (right_index <= heap -> size && heap -> data[right_index] > heap->data[largest]) largest = right_index ;
+    
+    if (heap -> data[i] != heap -> data[largest]) 
+    {
+        swap(&heap -> data[i] , &heap -> data[largest]) ;
+        max_heapify(heap , largest) ;
+    }
+}
 void enqueue(heap *heap, int item)
 {
     heap -> data[++heap -> size] = item ;
